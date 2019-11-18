@@ -17,10 +17,10 @@ echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
 sudo adduser $your_name dialout 
 
 # install ardupilot
-git clone https://github.com/ksato-dev/ardupilot.git   # clone
+git clone https://github.com/Smartrobotics/ardupilot-smartrobotics.git   # clone
 cd ardupilot   # ディレクトリ（フォルダ）変更
 git submodule update --init --recursive   # サブモジュールのアップデート
-git checkout -b create_new_flight_mode origin/create_new_flight_mode   # 開発用ブランチにチェックアウト
+git checkout -b dev_original_flight_mode origin/dev_original_flight_mode   # 開発用ブランチにチェックアウト
 sudo ./Tools/enviroment_install/install-prereqs-ubuntu.sh   # Ubuntu 用インストールスクリプト実行
 ./waf configure
 ./Tools/autotest/sim_vehicle.py -v ArduCopter --console --map   # SITL 実行 & MAVProxy 実行（コンソール＋ map オプション）
